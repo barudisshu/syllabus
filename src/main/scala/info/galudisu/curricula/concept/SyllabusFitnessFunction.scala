@@ -11,7 +11,7 @@ import org.jgap._
   *
   * 重演适值(FitnessFunction): F = (fmax - f) / (fmax - favg) * f
   */
-class CurriculaFitnessFunction extends FitnessFunction {
+class SyllabusFitnessFunction extends FitnessFunction {
 
   /** 惩罚点 */
   private var penalty: Double = _

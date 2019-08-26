@@ -1,4 +1,4 @@
-name := "Genetic-Algorithm"
+name := "syllabus"
 maintainer := "galudisu@gmail.com"
 
 version := "0.1"

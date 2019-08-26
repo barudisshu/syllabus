@@ -83,40 +83,16 @@ UNTIL population has converged
 STOP
 ```
 
+## 遗传算法实现的排课系统
+
+排课系统的实现原理是：
+
+- 将Group(班级人数)+Class(教室容量)+Teacher(教师)+Lesson(课程)+Time(每节时间)重组成为基因编码。
+- 在每次的种群进化中，获取进化的染色体`IChromosome`，该染色体是每次迭代产生的。解组该染色体，得到排课的基因编码`[Group][Class][Teacher][Lesson][Time]`
+- 对解组的基因编码进行阈值处理，每次获得适值函数fitness。
+- 适值函数fitness在每次迭代中重新计算，直到满足阈值，终止；不能满足阈值，达到种群最大进化数，终止。
+
+![自动排课系统](doc/syllabus-evolution.png)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+适值函数不是每次都能达到阈值，它获得的是一个最优解。

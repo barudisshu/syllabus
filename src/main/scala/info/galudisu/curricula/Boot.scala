@@ -6,7 +6,7 @@ import info.galudisu.curricula.GlobalLimit._
 import info.galudisu.curricula.concept._
 import info.galudisu.curricula.core._
 import info.galudisu.curricula.io._
-import info.galudisu.curricula.concept.{CurriculaFitnessFunction, CurriculaMutationOperator, GroupClassTeacherLessonTimeSG, InitialConstraintChecker}
+import info.galudisu.curricula.concept.{SyllabusFitnessFunction, SyllabusMutationOperator, GroupClassTeacherLessonTimeSG, InitialConstraintChecker}
 import info.galudisu.curricula.core.{ClassGene, GroupGene, LessonGene, TeacherGene, TimeGene}
 import info.galudisu.curricula.io.{InputData, OutputData}
 import org.jgap._
@@ -26,7 +26,7 @@ object Boot {
     }
 
     val conf: Configuration = new Configuration("1", "myconf")
-    val fitnessFunction = new CurriculaFitnessFunction()
+    val fitnessFunction = new SyllabusFitnessFunction()
     val timetableConstraintChecker = InitialConstraintChecker()
 
     // Creating genes
@@ -62,7 +62,7 @@ object Boot {
     val myTwoWayMutationOperator = new TwoWayMutationOperator(conf)
     conf.addGeneticOperator(myTwoWayMutationOperator)
 
-    val myMutationOperator = CurriculaMutationOperator(conf)
+    val myMutationOperator = SyllabusMutationOperator(conf)
     conf.addGeneticOperator(myMutationOperator)
 
     conf.setKeepPopulationSizeConstant(false)
