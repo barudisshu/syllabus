@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<timetable xmlns="http://info.galudisu.timetable"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="inputTimetable.xsd"
+           chromosome_size="8"
+           population_size="10"
+           max_evolution="1000"
+           threshold="1">
+  <genes>
+      <classGenes>
+        <classGene classId="401" classSize="30"/>
+        <classGene classId="101" classSize="30"/>
+        <classGene classId="202" classSize="30"/>
+        <classGene classId="303" classSize="30"/>
+      </classGenes>
+      <groupGenes>
+        <groupGene groupId="10" superGroupId="1" groupName="组群[45人]" groupSize="25" lessons="10 11" times="1 2"/>
+        <groupGene groupId="15" groupName="组群[60人]" groupSize="20" lessons="10 11" times="1 2"/>
+        <groupGene groupId="25" groupName="组群[28人]" groupSize="28" lessons="10 11" times="1 2"/>
+      </groupGenes>
+      <teacherGenes>
+        <teacherGene teacherId="15" teacherName="张三" availableLessons="10 11 13" availableTimeSlots="0 1 3" availableGroups=""/>
+        <teacherGene teacherId="25" teacherName="李四" availableLessons="12 13 14 15" availableTimeSlots="1 2"/>
+        <teacherGene teacherId="35" teacherName="王二" availableLessons="11 12 13 14" availableTimeSlots="0 2"/>
+        <teacherGene teacherId="45" teacherName="麻子" availableLessons="10 11 12 13 14 15" availableTimeSlots="3"/>
+      </teacherGenes>
+      <lessonGenes>
+        <lessonGene lessonId="10"  lessonName="数学" isForSuperGroup="0/1" isForSubGroup="0/1"/>
+        <lessonGene lessonId="11"  lessonName="语文"/>
+        <lessonGene lessonId="12"  lessonName="英语"/>
+        <lessonGene lessonId="13"  lessonName="物理"/>
+        <lessonGene lessonId="14"  lessonName="化学"/>
+        <lessonGene lessonId="15"  lessonName="生物"/>
+      </lessonGenes>
+      <timeGenes>
+        <timeGene timeSlotId="0" timeSlotName="第一节"/>
+        <timeGene timeSlotId="1" timeSlotName="第二节"/>
+        <timeGene timeSlotId="2" timeSlotName="第三节"/>
+        <timeGene timeSlotId="3" timeSlotName="第四节"/>
+      </timeGenes>
+    </genes>
+</timetable>

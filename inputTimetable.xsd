@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://info.galudisu.timetable"
+            elementFormDefault="qualified">
+  <xsd:element name="timetable">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="genes">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="classGenes">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="classGene" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:attribute name="classId">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:integer">
+                              <xsd:minExclusive value="0"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="classSize">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:integer">
+                              <xsd:minExclusive value="0"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="groupGenes">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="groupGene" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:attribute name="groupId">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:integer">
+                              <xsd:minExclusive value="0"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="superGroupId">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:integer">
+                              <xsd:minExclusive value="0"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="groupName">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:string"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="groupSize">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:integer">
+                              <xsd:minExclusive value="0"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="lessons">
+                          <xsd:simpleType>
+                            <xsd:list itemType="xsd:integer"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="times">
+                          <xsd:simpleType>
+                            <xsd:list itemType="xsd:integer"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="teacherGenes">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="teacherGene" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:attribute name="teacherId">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:integer">
+                              <xsd:minExclusive value="0"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="teacherName">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:string"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="availableLessons">
+                          <xsd:simpleType>
+                            <xsd:list itemType="xsd:integer"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="availableTimeSlots">
+                          <xsd:simpleType>
+                            <xsd:list itemType="xsd:integer"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="availableGroups">
+                          <xsd:simpleType>
+                            <xsd:list itemType="xsd:integer"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="lessonGenes">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="lessonGene" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:attribute name="lessonId">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:integer">
+                              <xsd:fractionDigits value="0"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="lessonName">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:string"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="isForSuperGroup">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:string"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="isForSubGroup">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:string"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="timeGenes">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="timeGene" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:attribute name="timeSlotId">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:integer">
+                              <xsd:fractionDigits value="0"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                        <xsd:attribute name="timeSlotName">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:string"/>
+                          </xsd:simpleType>
+                        </xsd:attribute>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="chromosome_size">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minExclusive value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="population_size">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minExclusive value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="max_evolution">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minExclusive value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="threshold">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minExclusive value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

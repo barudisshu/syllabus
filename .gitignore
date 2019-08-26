@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+project/target/
+target/
+best_chromosome.xml
+population.xml
